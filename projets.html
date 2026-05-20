@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projets — Ira Eliezer</title>
+  <meta name="description" content="Sélection de projets SIG d'Ira Eliezer : plugins QGIS, outils ArcGIS Pro, scripts FME, architectures PostGIS et automatisations Python." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+  <header class="header">
+    <div class="container">
+      <a href="index.html" class="logo">
+        <span class="logo-mark">IE</span>
+        <span>Ira Eliezer</span>
+      </a>
+      <nav class="nav">
+        <a href="index.html">Accueil</a>
+        <a href="index.html#experiences">Expériences</a>
+        <a href="projets.html">Projets</a>
+        <a href="geospatial.html">Le monde du Géospatial</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <button class="nav-toggle" aria-label="Menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <section style="padding-top: calc(var(--header-h) + 80px);">
+    <div class="container">
+
+      <div class="section-head reveal" style="max-width: 800px;">
+        <div class="section-eyebrow">Projets sélectionnés</div>
+        <h1 style="margin-bottom: 16px;">
+          Des outils <span class="text-gradient">qui fluidifient</span> la chaîne SIG.
+        </h1>
+        <p>
+          Plugins, scripts, architectures : voici une sélection de réalisations qui
+          illustrent mon approche — de l'automatisation au contrôle qualité, en passant
+          par l'administration de bases de données spatiales.
+        </p>
+      </div>
+
+      <div class="projects-grid">
+
+        <!-- Projet 1 : grand -->
+        <article class="project project-size-lg reveal" style="--gradient: linear-gradient(135deg, #10b981, #06b6d4);">
+          <span class="project-tag">Plugin QGIS</span>
+          <svg class="project-shape" viewBox="0 0 200 200" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1.5">
+            <circle cx="100" cy="100" r="80" />
+            <circle cx="100" cy="100" r="55" />
+            <circle cx="100" cy="100" r="30" />
+            <path d="M20 100 H180 M100 20 V180" stroke="rgba(255,255,255,0.06)" />
+            <circle cx="100" cy="100" r="4" fill="rgba(16,185,129,0.8)" stroke="none" />
+            <circle cx="140" cy="80" r="3" fill="rgba(255,255,255,0.5)" stroke="none" />
+            <circle cx="70" cy="130" r="3" fill="rgba(255,255,255,0.5)" stroke="none" />
+          </svg>
+          <div class="project-stack">
+            <span>Python</span>
+            <span>PyQGIS</span>
+            <span>PyQt5</span>
+            <span>PostGIS</span>
+          </div>
+          <h3>Plugin QGIS — Gestion des fiches ouvrages</h3>
+          <p>
+            Plugin développé pour automatiser la création, la mise à jour et l'export des
+            fiches ouvrages directement depuis QGIS. Connecté à PostGIS, il intègre des
+            règles métier et un module de validation OGC.
+          </p>
+          <a href="contact.html" class="project-link">
+            Échanger sur ce projet
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+          </a>
+        </article>
+
+        <!-- Projet 2 : medium -->
+        <article class="project project-size-md reveal reveal-delay-1" style="--gradient: linear-gradient(135deg, #f59e0b, #ea580c);">
+          <span class="project-tag">Boîte à outils</span>
+          <svg class="project-shape" viewBox="0 0 200 200" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1.5">
+            <rect x="40" y="40" width="120" height="120" rx="8" />
+            <rect x="60" y="60" width="80" height="80" rx="4" />
+            <circle cx="100" cy="100" r="20" fill="rgba(245,158,11,0.3)" stroke="none" />
+          </svg>
+          <div class="project-stack">
+            <span>ArcGIS Pro</span>
+            <span>arcpy</span>
+            <span>EXIF</span>
+          </div>
+          <h3>Boîte à outils ArcGIS — Photos terrain</h3>
+          <p>
+            Télécharge, renomme et géoréférence automatiquement les photos prises sur le terrain.
+          </p>
+          <a href="contact.html" class="project-link">
+            Voir plus
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+          </a>
+        </article>
+
+        <!-- Projet 3 : small -->
+        <article class="project project-size-sm reveal reveal-delay-2" style="--gradient: linear-gradient(135deg, #6366f1, #8b5cf6);">
+          <span class="project-tag">FME</span>
+          <svg class="project-shape" viewBox="0 0 200 200" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1.5">
+            <path d="M30 100 L80 50 L130 100 L80 150 Z" />
+            <path d="M80 50 L170 100 L80 150" />
+            <circle cx="170" cy="100" r="6" fill="rgba(99,102,241,0.6)" stroke="none" />
+          </svg>
+          <div class="project-stack">
+            <span>FME</span>
+            <span>Python</span>
+            <span>OGC</span>
+          </div>
+          <h3>Contrôle qualité automatisé</h3>
+          <p>Suite d'outils FME et Python pour valider la conformité OGC.</p>
+          <a href="contact.html" class="project-link">
+            Voir plus
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+          </a>
+        </article>
+
+        <!-- Projet 4 : small -->
+        <article class="project project-size-sm reveal" style="--gradient: linear-gradient(135deg, #0ea5e9, #6366f1);">
+          <span class="project-tag">Géoréférencement</span>
+          <svg class="project-shape" viewBox="0 0 200 200" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1.5">
+            <path d="M20 180 Q60 100 100 130 T180 80" />
+            <circle cx="60" cy="140" r="3" fill="rgba(14,165,233,0.7)" stroke="none" />
+            <circle cx="100" cy="130" r="3" fill="rgba(14,165,233,0.7)" stroke="none" />
+            <circle cx="140" cy="105" r="3" fill="rgba(14,165,233,0.7)" stroke="none" />
+            <circle cx="180" cy="80" r="3" fill="rgba(14,165,233,0.7)" stroke="none" />
+          </svg>
+          <div class="project-stack">
+            <span>LiDAR</span>
+            <span>CloudCompare</span>
+            <span>Python</span>
+          </div>
+          <h3>Géoréférencement nuages de points</h3>
+          <p>Pipeline de géoréférencement pour données LiDAR & photogrammétrie.</p>
+          <a href="contact.html" class="project-link">
+            Voir plus
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+          </a>
+        </article>
+
+        <!-- Projet 5 : medium -->
+        <article class="project project-size-md reveal reveal-delay-1" style="--gradient: linear-gradient(135deg, #ec4899, #f43f5e);">
+          <span class="project-tag">Architecture SIG</span>
+          <svg class="project-shape" viewBox="0 0 200 200" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1.5">
+            <rect x="30" y="30" width="50" height="40" rx="4" />
+            <rect x="120" y="30" width="50" height="40" rx="4" />
+            <rect x="75" y="130" width="50" height="40" rx="4" />
+            <path d="M55 70 L100 130 M145 70 L100 130" />
+          </svg>
+          <div class="project-stack">
+            <span>ArcGIS Enterprise</span>
+            <span>PostGIS</span>
+            <span>QGIS</span>
+          </div>
+          <h3>Architecture SIG hybride</h3>
+          <p>Conception d'architectures ESRI + open source pour collectivités et bureaux d'études.</p>
+          <a href="contact.html" class="project-link">
+            Voir plus
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+          </a>
+        </article>
+
+        <!-- Projet 6 : large -->
+        <article class="project project-size-lg reveal reveal-delay-2" style="--gradient: linear-gradient(135deg, #14b8a6, #0ea5e9);">
+          <span class="project-tag">Outil métier</span>
+          <svg class="project-shape" viewBox="0 0 200 200" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1.5">
+            <circle cx="100" cy="100" r="70" />
+            <path d="M100 30 L100 170 M30 100 L170 100" />
+            <path d="M50 50 L150 150 M150 50 L50 150" stroke="rgba(255,255,255,0.05)" />
+            <circle cx="100" cy="100" r="8" fill="rgba(20,184,166,0.6)" stroke="none" />
+          </svg>
+          <div class="project-stack">
+            <span>Python</span>
+            <span>Active Directory</span>
+            <span>ArcGIS Online</span>
+          </div>
+          <h3>Gestion des habilitations SIG</h3>
+          <p>
+            Interface développée pour la Métropole de Lyon, permettant aux administrateurs
+            métiers de gérer les droits d'accès aux ressources SIG sans passer par la DSI.
+            Un gain de temps majeur et une réduction notable des tickets de support.
+          </p>
+          <a href="contact.html" class="project-link">
+            Échanger sur ce projet
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+          </a>
+        </article>
+
+      </div>
+
+      <div style="text-align: center; margin-top: 60px;" class="reveal">
+        <h3 style="margin-bottom: 12px;">Un projet en tête ?</h3>
+        <p class="text-muted" style="margin-bottom: 24px;">Parlons-en — j'accompagne aussi bien les bureaux d'études que les collectivités.</p>
+        <a href="contact.html" class="btn btn-primary">
+          Démarrer une discussion
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-links">
+        <a href="index.html">Accueil</a>
+        <a href="projets.html">Projets</a>
+        <a href="geospatial.html">Le monde du Géospatial</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div>© 2026 Ira Eliezer · Ingénieur SIG</div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
