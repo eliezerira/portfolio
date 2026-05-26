@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Projets — Ira Eliezer</title>
-  <meta name="description" content="Sélection de projets SIG d'Ira Eliezer : plugins QGIS, outils ArcGIS Pro, scripts FME, architectures PostGIS et automatisations Python." />
+  <meta name="description" content="Projets SIG d'Ira Eliezer : réalisations en entreprise (Groupe PARERA, Métropole de Lyon) et projets personnels (chaîne YouTube, newsletter géospatiale)." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
@@ -31,25 +31,55 @@
     </div>
   </header>
 
-  <section style="padding-top: calc(var(--header-h) + 80px);">
+  <!-- Hero -->
+  <section style="padding-top: calc(var(--header-h) + 80px); padding-bottom: 40px;">
     <div class="container">
 
       <div class="section-head reveal" style="max-width: 800px;">
-        <div class="section-eyebrow">Projets sélectionnés</div>
+        <div class="section-eyebrow">Projets</div>
         <h1 style="margin-bottom: 16px;">
           Des outils <span class="text-gradient">qui fluidifient</span> la chaîne SIG.
         </h1>
         <p>
-          Plugins, scripts, architectures : voici une sélection de réalisations qui
-          illustrent mon approche — de l'automatisation au contrôle qualité, en passant
-          par l'administration de bases de données spatiales.
+          Réalisations en entreprise et initiatives personnelles : plugins, scripts,
+          architectures, contenus pédagogiques. Tout ce qui contribue à rendre la
+          géomatique plus accessible et plus efficace.
         </p>
+      </div>
+
+      <!-- Onglets de navigation rapide -->
+      <div class="projects-tabs reveal">
+        <a href="#projets-entreprise" class="projects-tab">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V7l8-4v18M19 21V11l-6-4"/></svg>
+          Projets en entreprise
+        </a>
+        <a href="#projets-personnels" class="projects-tab">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          Projets personnels
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =============== PROJETS EN ENTREPRISE =============== -->
+  <section id="projets-entreprise" style="padding-top: 40px; padding-bottom: 60px;">
+    <div class="container">
+
+      <div class="section-head reveal">
+        <div class="section-eyebrow">En entreprise</div>
+        <h2>Réalisations professionnelles</h2>
+        <p>Projets livrés pour le Groupe PARERA et la Métropole de Lyon.</p>
       </div>
 
       <div class="projects-grid">
 
-        <!-- Projet 1 : grand -->
+        <!-- Projet 1 : grand — PARERA -->
         <article class="project project-size-lg reveal" style="--gradient: linear-gradient(135deg, #10b981, #06b6d4);">
+          <span class="project-company">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V7l8-4v18M19 21V11l-6-4"/></svg>
+            Groupe PARERA
+          </span>
           <span class="project-tag">Plugin QGIS</span>
           <svg class="project-shape" viewBox="0 0 200 200" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1.5">
             <circle cx="100" cy="100" r="80" />
@@ -64,13 +94,12 @@
             <span>Python</span>
             <span>PyQGIS</span>
             <span>PyQt5</span>
-            <span>PostGIS</span>
           </div>
           <h3>Plugin QGIS — Gestion des fiches ouvrages</h3>
           <p>
-            Plugin développé pour automatiser la création, la mise à jour et l'export des
-            fiches ouvrages directement depuis QGIS. Connecté à PostGIS, il intègre des
-            règles métier et un module de validation OGC.
+            Plugin développé pour automatiser la création et l'export des
+            fiches ouvrages directement depuis QGIS. Connecté à la donnée client, il intègre des
+            règles métier et propose une fiche ouvrage préalablement acceptée par le client.
           </p>
           <a href="contact.html" class="project-link">
             Échanger sur ce projet
@@ -78,8 +107,12 @@
           </a>
         </article>
 
-        <!-- Projet 2 : medium -->
+        <!-- Projet 2 : medium — PARERA -->
         <article class="project project-size-md reveal reveal-delay-1" style="--gradient: linear-gradient(135deg, #f59e0b, #ea580c);">
+          <span class="project-company">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V7l8-4v18M19 21V11l-6-4"/></svg>
+            Groupe PARERA
+          </span>
           <span class="project-tag">Boîte à outils</span>
           <svg class="project-shape" viewBox="0 0 200 200" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1.5">
             <rect x="40" y="40" width="120" height="120" rx="8" />
@@ -89,11 +122,10 @@
           <div class="project-stack">
             <span>ArcGIS Pro</span>
             <span>arcpy</span>
-            <span>EXIF</span>
           </div>
           <h3>Boîte à outils ArcGIS — Photos terrain</h3>
           <p>
-            Télécharge, renomme et géoréférence automatiquement les photos prises sur le terrain.
+            Télécharge et renomme automatiquement les photos prises sur le terrain.
           </p>
           <a href="contact.html" class="project-link">
             Voir plus
@@ -101,8 +133,12 @@
           </a>
         </article>
 
-        <!-- Projet 3 : small -->
+        <!-- Projet 3 : small — PARERA -->
         <article class="project project-size-sm reveal reveal-delay-2" style="--gradient: linear-gradient(135deg, #6366f1, #8b5cf6);">
+          <span class="project-company">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V7l8-4v18M19 21V11l-6-4"/></svg>
+            Groupe PARERA
+          </span>
           <span class="project-tag">FME</span>
           <svg class="project-shape" viewBox="0 0 200 200" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1.5">
             <path d="M30 100 L80 50 L130 100 L80 150 Z" />
@@ -122,53 +158,14 @@
           </a>
         </article>
 
-        <!-- Projet 4 : small -->
-        <article class="project project-size-sm reveal" style="--gradient: linear-gradient(135deg, #0ea5e9, #6366f1);">
-          <span class="project-tag">Géoréférencement</span>
-          <svg class="project-shape" viewBox="0 0 200 200" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1.5">
-            <path d="M20 180 Q60 100 100 130 T180 80" />
-            <circle cx="60" cy="140" r="3" fill="rgba(14,165,233,0.7)" stroke="none" />
-            <circle cx="100" cy="130" r="3" fill="rgba(14,165,233,0.7)" stroke="none" />
-            <circle cx="140" cy="105" r="3" fill="rgba(14,165,233,0.7)" stroke="none" />
-            <circle cx="180" cy="80" r="3" fill="rgba(14,165,233,0.7)" stroke="none" />
-          </svg>
-          <div class="project-stack">
-            <span>LiDAR</span>
-            <span>CloudCompare</span>
-            <span>Python</span>
-          </div>
-          <h3>Géoréférencement nuages de points</h3>
-          <p>Pipeline de géoréférencement pour données LiDAR & photogrammétrie.</p>
-          <a href="contact.html" class="project-link">
-            Voir plus
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
-          </a>
-        </article>
 
-        <!-- Projet 5 : medium -->
-        <article class="project project-size-md reveal reveal-delay-1" style="--gradient: linear-gradient(135deg, #ec4899, #f43f5e);">
-          <span class="project-tag">Architecture SIG</span>
-          <svg class="project-shape" viewBox="0 0 200 200" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1.5">
-            <rect x="30" y="30" width="50" height="40" rx="4" />
-            <rect x="120" y="30" width="50" height="40" rx="4" />
-            <rect x="75" y="130" width="50" height="40" rx="4" />
-            <path d="M55 70 L100 130 M145 70 L100 130" />
-          </svg>
-          <div class="project-stack">
-            <span>ArcGIS Enterprise</span>
-            <span>PostGIS</span>
-            <span>QGIS</span>
-          </div>
-          <h3>Architecture SIG hybride</h3>
-          <p>Conception d'architectures ESRI + open source pour collectivités et bureaux d'études.</p>
-          <a href="contact.html" class="project-link">
-            Voir plus
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
-          </a>
-        </article>
 
-        <!-- Projet 6 : large -->
+        <!-- Projet 6 : large — Métropole de Lyon -->
         <article class="project project-size-lg reveal reveal-delay-2" style="--gradient: linear-gradient(135deg, #14b8a6, #0ea5e9);">
+          <span class="project-company">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V7l8-4v18M19 21V11l-6-4"/></svg>
+            Métropole de Lyon
+          </span>
           <span class="project-tag">Outil métier</span>
           <svg class="project-shape" viewBox="0 0 200 200" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1.5">
             <circle cx="100" cy="100" r="70" />
@@ -194,8 +191,177 @@
         </article>
 
       </div>
+    </div>
+  </section>
 
-      <div style="text-align: center; margin-top: 60px;" class="reveal">
+  <!-- Séparateur visuel -->
+  <div class="section-divider reveal">
+    <div class="container">
+      <div class="divider-line"></div>
+    </div>
+  </div>
+
+  <!-- =============== PROJETS PERSONNELS =============== -->
+  <section id="projets-personnels" style="padding-top: 60px; padding-bottom: 80px;">
+    <div class="container">
+
+      <div class="section-head reveal">
+        <div class="section-eyebrow">À titre personnel</div>
+        <h2>Projet personnel en cours</h2>
+        <p>
+          Initiative menée en parallèle de mes missions pour répondre à un besoin
+          concret du marché des énergies renouvelables.
+        </p>
+      </div>
+
+      <!-- Projet Nexus — featured solo -->
+      <article class="project-featured reveal">
+        <div class="project-featured-shape" aria-hidden="true">
+          <!-- Visuel : panneaux solaires isométriques stylisés -->
+          <svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="panelGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#10b981" stop-opacity="0.4"/>
+                <stop offset="100%" stop-color="#06b6d4" stop-opacity="0.2"/>
+              </linearGradient>
+              <linearGradient id="panelGradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.5"/>
+                <stop offset="100%" stop-color="#0ea5e9" stop-opacity="0.3"/>
+              </linearGradient>
+            </defs>
+            <!-- Sol isométrique -->
+            <path d="M50 280 L200 200 L350 280 L200 360 Z" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+            <!-- Panneau 1 -->
+            <path d="M120 250 L200 210 L240 230 L160 270 Z" fill="url(#panelGradient)" stroke="rgba(16,185,129,0.6)" stroke-width="1.5"/>
+            <path d="M140 240 L210 205" stroke="rgba(255,255,255,0.2)" stroke-width="0.5"/>
+            <path d="M160 250 L220 220" stroke="rgba(255,255,255,0.2)" stroke-width="0.5"/>
+            <path d="M180 260 L230 235" stroke="rgba(255,255,255,0.2)" stroke-width="0.5"/>
+            <!-- Panneau 2 -->
+            <path d="M210 230 L290 190 L330 210 L250 250 Z" fill="url(#panelGradient2)" stroke="rgba(6,182,212,0.6)" stroke-width="1.5"/>
+            <path d="M230 220 L300 185" stroke="rgba(255,255,255,0.2)" stroke-width="0.5"/>
+            <path d="M250 230 L310 200" stroke="rgba(255,255,255,0.2)" stroke-width="0.5"/>
+            <path d="M270 240 L320 215" stroke="rgba(255,255,255,0.2)" stroke-width="0.5"/>
+            <!-- Soleil -->
+            <circle cx="320" cy="80" r="22" fill="rgba(245,158,11,0.25)" stroke="rgba(245,158,11,0.6)" stroke-width="1.5"/>
+            <g stroke="rgba(245,158,11,0.4)" stroke-width="1.2" stroke-linecap="round">
+              <line x1="320" y1="40" x2="320" y2="48"/>
+              <line x1="320" y1="112" x2="320" y2="120"/>
+              <line x1="280" y1="80" x2="288" y2="80"/>
+              <line x1="352" y1="80" x2="360" y2="80"/>
+              <line x1="292" y1="52" x2="298" y2="58"/>
+              <line x1="342" y1="102" x2="348" y2="108"/>
+              <line x1="348" y1="52" x2="342" y2="58"/>
+              <line x1="298" y1="102" x2="292" y2="108"/>
+            </g>
+            <!-- Grille de carte en arrière-plan -->
+            <g stroke="rgba(255,255,255,0.04)" stroke-width="0.5">
+              <line x1="0" y1="100" x2="400" y2="100"/>
+              <line x1="0" y1="150" x2="400" y2="150"/>
+              <line x1="0" y1="200" x2="400" y2="200"/>
+              <line x1="0" y1="250" x2="400" y2="250"/>
+              <line x1="0" y1="300" x2="400" y2="300"/>
+              <line x1="80" y1="0" x2="80" y2="400"/>
+              <line x1="160" y1="0" x2="160" y2="400"/>
+              <line x1="240" y1="0" x2="240" y2="400"/>
+              <line x1="320" y1="0" x2="320" y2="400"/>
+            </g>
+          </svg>
+        </div>
+
+        <div class="project-featured-content">
+          <div class="project-featured-meta">
+            <span class="project-company project-company-perso project-company-static">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+              Projet personnel
+            </span>
+            <span class="status-badge">
+              <span class="status-dot"></span>
+              En développement · v1.0 · 2025
+            </span>
+          </div>
+
+          <h3 class="project-featured-title">
+            <span class="text-gradient">Nexus</span>
+          </h3>
+          <p class="project-featured-tagline">
+            Solution SaaS géospatiale pour les entreprises du secteur des énergies renouvelables.
+          </p>
+
+          <p class="project-featured-desc">
+            Une application web qui centralise, analyse et exploite les données géospatiales,
+            réglementaires et financières d'un projet ENR. Objectif : réduire drastiquement
+            le temps des études de faisabilité photovoltaïque, automatiser le croisement
+            des données (PLU, cadastre, zones protégées, ensoleillement) et générer
+            des rapports d'étude prêts à livrer au client.
+          </p>
+
+          <div class="project-features">
+            <div class="project-feature">
+              <div class="project-feature-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="10" r="3"/><path d="M12 2a8 8 0 0 0-8 8c0 1.892.402 3.13 1.5 4.5L12 22l6.5-7.5c1.098-1.37 1.5-2.608 1.5-4.5a8 8 0 0 0-8-8z"/></svg>
+              </div>
+              <div>
+                <strong>Cartographie interactive</strong>
+                <span>Multi-fonds (IGN, OSM, satellite, cadastre), dessin vectoriel, export</span>
+              </div>
+            </div>
+            <div class="project-feature">
+              <div class="project-feature-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M7 14l4-4 4 4 5-5"/></svg>
+              </div>
+              <div>
+                <strong>Étude de faisabilité automatisée</strong>
+                <span>5 volets : technique, dimensionnement, réglementaire, financier, environnemental</span>
+              </div>
+            </div>
+            <div class="project-feature">
+              <div class="project-feature-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
+              </div>
+              <div>
+                <strong>Rapports d'étude générés automatiquement</strong>
+                <span>Livrables structurés, prêts à être remis au client</span>
+              </div>
+            </div>
+            <div class="project-feature">
+              <div class="project-feature-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              </div>
+              <div>
+                <strong>Données réglementaires françaises</strong>
+                <span>Intégration native PLU, cadastre, ENEDIS, zones protégées</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-stack project-stack-featured">
+            <span>React</span>
+            <span>OpenLayers / MapLibre</span>
+            <span>Python · FastAPI</span>
+            <span>PostgreSQL · PostGIS</span>
+            <span>WMS / WFS</span>
+            <span>Géoportail IGN</span>
+          </div>
+
+          <div class="project-featured-actions">
+            <a href="contact.html" class="btn btn-primary">
+              Échanger sur Nexus
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </a>
+            <a href="#projets-entreprise" class="btn btn-ghost">
+              Voir mes projets pros
+            </a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- CTA final -->
+  <section style="padding-top: 0;">
+    <div class="container">
+      <div style="text-align: center;" class="reveal">
         <h3 style="margin-bottom: 12px;">Un projet en tête ?</h3>
         <p class="text-muted" style="margin-bottom: 24px;">Parlons-en — j'accompagne aussi bien les bureaux d'études que les collectivités.</p>
         <a href="contact.html" class="btn btn-primary">
@@ -203,7 +369,6 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
         </a>
       </div>
-
     </div>
   </section>
 
