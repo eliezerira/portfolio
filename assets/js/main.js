@@ -43,6 +43,96 @@
     reveals.forEach(el => el.classList.add('in'));
   }
 
+  // ---------- YouTube auto-fetch (RSS via rss2json) ----------
+  const ytGrid = document.querySelector('#yt-grid');
+  if (ytGrid) loadYouTubeVideos(ytGrid);
+
+  async function loadYouTubeVideos(grid) {
+    const channelId = grid.dataset.channelId;
+    const excludeId = grid.dataset.exclude || '';
+    const limit = parseInt(grid.dataset.limit, 10) || 6;
+    const fallback = document.querySelector('#yt-fallback');
+
+    if (!channelId) return;
+
+    const rssUrl = `https://www.youtube.com/feeds/videos.xml?channel_id=${channelId}`;
+    const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`;
+
+    try {
+      const res = await fetch(apiUrl);
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      const data = await res.json();
+      if (data.status !== 'ok' || !Array.isArray(data.items)) throw new Error('Bad payload');
+
+      const videos = data.items
+        .map(item => {
+          const id = (item.guid || '').split(':').pop() || extractIdFromLink(item.link);
+          return { ...item, videoId: id };
+        })
+        .filter(v => v.videoId && v.videoId !== excludeId)
+        .slice(0, limit);
+
+      if (!videos.length) {
+        if (fallback) fallback.hidden = false;
+        grid.innerHTML = '';
+        return;
+      }
+
+      grid.innerHTML = videos.map((v, i) => `
+        <article class="video-card reveal ${i > 0 ? 'reveal-delay-' + Math.min(i, 3) : ''}">
+          <a href="${escapeAttr(v.link)}" target="_blank" rel="noopener" class="video-thumb-link" aria-label="Regarder : ${escapeAttr(v.title)}">
+            <div class="thumb">
+              <img src="https://i.ytimg.com/vi/${escapeAttr(v.videoId)}/hqdefault.jpg"
+                   alt="${escapeAttr(v.title)}"
+                   loading="lazy" />
+              <div class="play-overlay" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+            </div>
+          </a>
+          <div class="video-card-body">
+            <div class="card-meta">
+              <span>${formatDate(v.pubDate)}</span>
+            </div>
+            <h3>${escapeHtml(v.title)}</h3>
+            <a href="${escapeAttr(v.link)}" target="_blank" rel="noopener" class="card-cta">
+              Regarder sur YouTube
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+            </a>
+          </div>
+        </article>
+      `).join('');
+
+      // Re-attache l'observer pour les nouveaux .reveal
+      grid.querySelectorAll('.reveal').forEach(el => {
+        // Force la visibilité (fade-in immédiat) si déjà dans le viewport
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight) el.classList.add('in');
+      });
+    } catch (err) {
+      console.error('[YouTube fetch] Échec :', err);
+      grid.innerHTML = '';
+      if (fallback) fallback.hidden = false;
+    }
+  }
+
+  function extractIdFromLink(link) {
+    if (!link) return '';
+    const m = link.match(/[?&]v=([^&]+)/) || link.match(/youtu\.be\/([^?&]+)/);
+    return m ? m[1] : '';
+  }
+
+  function formatDate(d) {
+    try {
+      return new Date(d).toLocaleDateString('fr-FR', { year: 'numeric', month: 'long', day: 'numeric' });
+    } catch { return ''; }
+  }
+
+  function escapeHtml(s) {
+    return String(s || '').replace(/[&<>"']/g, m => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[m]));
+  }
+  function escapeAttr(s) { return escapeHtml(s); }
+
   // ---------- Contact form ----------
   const form = document.querySelector('#contact-form');
   if (form) {
